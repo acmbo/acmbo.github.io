@@ -7,7 +7,7 @@
 ```
 sudo apt-get update
 sudo apt-get install build-essential gdb
-sudo apt-get install cmake
+sudo snap install cmake #--classic
 ```
 
 This will install dependecies like gcc and g++, and GNU debbuger.
