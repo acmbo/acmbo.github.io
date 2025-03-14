@@ -32,7 +32,7 @@ root
       - ThirdParty
 ```
 
-- To run Cmake specifiy the cmake path. Got in VScode to File -> Preferences -> Settings -> Cmake Path to `/usr/bin/cmake` (Check beforehand if its there. Otherwise install again with sudo ap install)
+- To run Cmake specifiy the cmake path. Got in VScode to File -> Preferences -> Settings -> Cmake Path to `/snap/cmake/current/bin/cmake` (Check beforehand if its there. Otherwise install again with sudo ap install)
 - Setup the CMakeLists.txt file correctly:
   - Remove all not installed or unused ThirdParty Libaries.
   - Make sure that 'add_executable' is set.
