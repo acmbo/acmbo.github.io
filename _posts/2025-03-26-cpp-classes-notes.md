@@ -149,3 +149,9 @@ Point3d& operator=(Point3d&&) = default; // Member-wise move
 4. Delete copy/move operators for non-copyable objects (e.g., mutexes).
 
 
+#### Define operators wirth References:
+
+You define the compound assignment operators (+=, -=, *=, /=) to return Point3d& (a reference to the current object) instead of Point3d (a new object) for several important reasons:
+- Convention and Expected Behavior: Compound assignment operators are conventionally expected to modify the left-hand operand in place and return a reference to it. This matches the behavior of built-in types (like int, double, etc.) and standard library types (like std::vector).
+- Chaining Operations: Returning a reference allows you to chain operations, like: `point1 += point2 += point3;  // Modifies point2, then modifies point1`. If you returned Point3d (a copy), chaining would still compile, but it would work on temporary copies rather than the original object, which is not the intended behavior.
+- Performance: Returning a reference avoids an unnecessary copy. If you returned Point3d, the compiler would have to create a temporary copy of the object, which is less efficient.
