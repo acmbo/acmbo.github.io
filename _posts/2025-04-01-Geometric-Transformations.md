@@ -27,7 +27,7 @@ Mathematical Notation for 3D Transformations
 ## Mathematical Notation for 3D Transformations  
 Transformations are represented using **4×4 matrices** (homogeneous coordinates) to combine translation with linear transformations.
 
-### 1. Translation by \((t_x, t_y, t_z)\)  
+### 1. Translation by $\((t_x, t_y, t_z)\)$  
 $$
 T = \begin{bmatrix}
 1 & 0 & 0 & t_x \\
@@ -52,7 +52,7 @@ R_z = \begin{bmatrix}
 $$  
 *(Similar for \(R_x\) and \(R_y\).)*
 
-### 3. Scaling by \((s_x, s_y, s_z)\)  
+### 3. Scaling by $\((s_x, s_y, s_z)\)$  
 $$
 S = \begin{bmatrix}
 s_x & 0 & 0 & 0 \\
