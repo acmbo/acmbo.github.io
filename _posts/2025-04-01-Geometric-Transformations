@@ -1,0 +1,26 @@
+## Geometry transformations in 3D Space
+
+Transformation in 3D Geometry (Euclidean Space)
+
+In 3D geometry, transformations are operations that modify the position, orientation, or shape of objects in Euclidean space. These include:
+
+1. Translation – Moving an object along a vector.
+2. Rotation – Turning an object around an axis.
+3. Scaling – Resizing an object uniformly or non-uniformly.
+4. Shearing – Distorting an object along an axis.
+5. Reflection – Mirroring an object across a plane.
+
+These transformations are represented using matrices (linear algebra) for efficiency and composability.
+
+### What is Euclidean Space?
+
+Euclidean space (denoted as ℝ³ for 3D) is a mathematical space where:
+- Points are defined by coordinates (e.g., (x,y,z)(x,y,z)).
+- Distances follow the Pythagorean theorem:
+    ```d(P1,P2)=sqrt ((x2−x1)^2+(y2−y1)^2+(z2−z1)^2)
+       d(P1​,P2​)=sqrt( (x2​−x1​)^2+(y2​−y1​)^2+(z2​−z1​)^2)```
+
+- Angles and straight lines behave as in classical geometry.
+- It is flat (no curvature, unlike non-Euclidean spaces).
+Mathematical Notation for 3D Transformations
+
