@@ -36,12 +36,15 @@ T = \begin{bmatrix}
 0 & 0 & 0 & 1 \\
 \end{bmatrix}
 $$  
+
 **Effect:**  
+
 $$
 \begin{pmatrix} x' \\ y' \\ z' \\ 1 \end{pmatrix} = T \cdot \begin{pmatrix} x \\ y \\ z \\ 1 \end{pmatrix}
 $$
 
 ### 2. Rotation (around Z-axis by angle θ)  
+
 $$
 R_z = \begin{bmatrix}
 \cosθ & -\sinθ & 0 & 0 \\
@@ -50,9 +53,11 @@ R_z = \begin{bmatrix}
 0 & 0 & 0 & 1 \\
 \end{bmatrix}
 $$  
-*(Similar for \(R_x\) and \(R_y\).)*
+
+*(Similar for %\(R_x\)% and $\(R_y\)$.)*
 
 ### 3. Scaling by $\((s_x, s_y, s_z)\)$  
+
 $$
 S = \begin{bmatrix}
 s_x & 0 & 0 & 0 \\
@@ -64,7 +69,9 @@ $$
 
 ### 4. Composition of Transformations  
 Multiple transformations are combined via **matrix multiplication**:  
+
 $$
 M = T \cdot R \cdot S
 $$  
+
 *(Order matters: e.g., "Translate then Rotate" ≠ "Rotate then Translate".)*
