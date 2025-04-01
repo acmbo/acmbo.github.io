@@ -1,5 +1,6 @@
 ## Setup VSCode and C++ on Linux
 
+
 - Install VSCode on Ubuntu via Software Shop
 - Here is a very good article on setting up VSCode on Linux: https://code.visualstudio.com/docs/cpp/config-linux
 
