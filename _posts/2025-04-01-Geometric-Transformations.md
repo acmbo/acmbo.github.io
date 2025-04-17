@@ -80,9 +80,9 @@ $$
 ##### How to Use the Rodriguez Formula (Step-by-Step)
 
 Let’s rotate 
-- vector $/v = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$ (x-axis) 
-- by $/\theta = 90^\circ$ ($\pi/2$ radians) 
-- around axis $/k = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}$ (z-axis).
+- vector $\v = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$ (x-axis) 
+- by $\\theta = 90^\circ$ ($\pi/2$ radians) 
+- around axis $\k = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}$ (z-axis).
 
 ###### **Step 1: Ensure $\(\mathbf{k}\)$ is a unit vector**
 $$
