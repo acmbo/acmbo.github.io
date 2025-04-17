@@ -120,7 +120,7 @@ $$
 $$
 
 ###### **Result**
-The vector $\(\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}\)$ rotated **90° around the z-axis** becomes $\(\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}\)$ (y-axis).
+The vector $/(\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}\)$ rotated **90° around the z-axis** becomes $/(\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}\)$ (y-axis).
 
 
 
