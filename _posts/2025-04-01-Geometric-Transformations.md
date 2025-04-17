@@ -86,7 +86,11 @@ Let’s rotate
     \theta = 90^\circ
     $$ 
     ($\pi/2$ radians) 
-- around axis $k = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}$ (z-axis).
+- around axis
+    $$
+    k = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+    $$ 
+    (z-axis).
 
 ###### **Step 1: Ensure $\(\mathbf{k}\)$ is a unit vector**
 $$
