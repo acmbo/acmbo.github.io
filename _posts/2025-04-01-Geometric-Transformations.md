@@ -66,7 +66,7 @@ $$
 The Rodriguez formula offers a compact and elegant way to rotate a vector around a given axis by a specified angle, without dealing with full rotation matrices or quaternions.
 
 Given:
-- A vector $/v$ that we want to rotate.
+- A vector $v$ that we want to rotate.
 - A unit axis vector $/k$ (the rotation axis).
 - An angle $/θ$ (the rotation angle in radians).
 
