@@ -24,7 +24,7 @@ Key Properties:
 
 With a more mathematical approach to Euclidean space (denoted as ℝ³ for 3D)  you can derive the following properties:
 - Points are defined by coordinates (e.g., (x,y,z)(x,y,z)).
-- Distances follow the Pythagorean theorem: $\d(P_1, P_2) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$
+- Distances follow the Pythagorean theorem: $\ d(P_1, P_2) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$
 - Angles and straight lines behave as in classical geometry.
 - It is flat (no curvature, unlike non-Euclidean spaces).
 Mathematical Notation for 3D Transformations
