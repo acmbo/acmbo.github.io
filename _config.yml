@@ -21,6 +21,9 @@ github_username: "acmbo"
 theme: "minima"
 
 #rss: rss
+# Build settings
+markdown: kramdown
+usemathjax: true
 
 kramdown:
   syntax_highlighter_opts:
