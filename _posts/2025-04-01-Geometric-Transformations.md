@@ -85,12 +85,12 @@ $$
 
 Let’s rotate vector $\(\mathbf{v} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}\)$ (x-axis) by $\(\theta = 90^\circ\)$ $\(\pi/2)$ radians around axis $\(\mathbf{k} = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\)$ (z-axis).
 
-###### **Step 1: Ensure \(\mathbf{k}\) is a unit vector**
+###### **Step 1: Ensure $\(\mathbf{k}\)$ is a unit vector**
 $$
 \|\mathbf{k}\| = \sqrt{0^2 + 0^2 + 1^2} = 1 \quad \text{(already normalized)}
 $$
 
-###### **Step 2: Compute \(\mathbf{k} \times \mathbf{v}\) (cross product)**
+###### **Step 2: Compute $\(\mathbf{k} \times \mathbf{v}\)$ (cross product)**
 $$
 \mathbf{k} \times \mathbf{v} = 
 \begin{vmatrix}
@@ -100,7 +100,7 @@ $$
 \end{vmatrix} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
 $$
 
-###### **Step 3: Compute \(\mathbf{k} \cdot \mathbf{v}\) (dot product)**
+###### **Step 3: Compute $\(\mathbf{k} \cdot \mathbf{v}\)$ (dot product)**
 $$
 \mathbf{k} \cdot \mathbf{v} = (0)(1) + (0)(0) + (1)(0) = 0
 $$
