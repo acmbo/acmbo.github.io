@@ -1,6 +1,7 @@
 ## Notes in C++ classes
 
 Switching from C# to C++ means get used to some indiviualities of the language. Class generation in C++ seems harder, because you have to implement more operations by yourself, which are not necessary in C#.
+Below are some keywords and hints to consider if you are switching from C# to C++.
 
 ### 'Delete' keyword
 

@@ -14,11 +14,20 @@ These transformations are represented using matrices (linear algebra) for effici
 
 ### What is Euclidean Space?
 
-Euclidean space (denoted as ℝ³ for 3D) is a mathematical space where:
+Euclidean space is the "standard" mathematical playground for geometry—the world of points, lines, and shapes where the rules feel intuitive. At its core, it’s built on Cartesian coordinates (like familiar (x, y) in 2D or (x, y, z) in 3D), but it’s more than just axes and grids.
+
+Key Properties:
+1. Flat and Rigid – No curves or warping: distances and angles follow Euclid’s ancient axioms. Think graph paper, not a globe.
+2. Pythagorean Distance – The straight-line distance between two points (like √(x² + y² + z²) in 3D) is the gold standard.
+3. Uniform Scaling – Shapes stay congruent when moved or rotated—no stretching weirdly (thanks to rigid transformations).
+4. Parallel Lines Stay Parallel – Unlike curved spaces (e.g., planetary surfaces), parallel lines never meet.
+
+With a more mathematical approach to Euclidean space (denoted as ℝ³ for 3D)  you can derive the following properties:
 - Points are defined by coordinates (e.g., (x,y,z)(x,y,z)).
 - Distances follow the Pythagorean theorem:
-    ```d(P1,P2)=sqrt ((x2−x1)^2+(y2−y1)^2+(z2−z1)^2)
-       d(P1​,P2​)=sqrt( (x2​−x1​)^2+(y2​−y1​)^2+(z2​−z1​)^2)```
+    $$
+    d(P_1, P_2) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}
+    $$
 
 - Angles and straight lines behave as in classical geometry.
 - It is flat (no curvature, unlike non-Euclidean spaces).
@@ -55,6 +64,69 @@ R_z = \begin{bmatrix}
 $$  
 
 *(Similar for %\(R_x\)% and $\(R_y\)$.)*
+
+####  2.1 Rodriguez Formula
+
+The Rodriguez formula offers a compact and elegant way to rotate a vector around a given axis by a specified angle, without dealing with full rotation matrices or quaternions.
+
+Given:
+- A vector $/v$ that we want to rotate.
+- A unit axis vector $/k$ (the rotation axis).
+- An angle $/θ$ (the rotation angle in radians).
+
+The rotated vector v' is given by:
+
+$$
+\mathbf{v'} = v \cosθ + (\mathbf{k} \times \mathbf{v}) \sinθ + \mathbf{k} (\mathbf{k} \cdot \mathbf{v}) (1 - \cosθ)
+$$
+
+
+##### How to Use the Rodriguez Formula (Step-by-Step)
+
+Let’s rotate vector $\(\mathbf{v} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}\)$ (x-axis) by $\(\theta = 90^\circ\)$ $\(\pi/2)$ radians around axis $\(\mathbf{k} = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\)$ (z-axis).
+
+###### **Step 1: Ensure \(\mathbf{k}\) is a unit vector**
+$$
+\|\mathbf{k}\| = \sqrt{0^2 + 0^2 + 1^2} = 1 \quad \text{(already normalized)}
+$$
+
+###### **Step 2: Compute \(\mathbf{k} \times \mathbf{v}\) (cross product)**
+$$
+\mathbf{k} \times \mathbf{v} = 
+\begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
+\end{vmatrix} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
+$$
+
+###### **Step 3: Compute \(\mathbf{k} \cdot \mathbf{v}\) (dot product)**
+$$
+\mathbf{k} \cdot \mathbf{v} = (0)(1) + (0)(0) + (1)(0) = 0
+$$
+
+###### **Step 4: Plug into the Rodriguez formula**
+
+$$
+\mathbf{v'} = \mathbf{v} \cos \theta + (\mathbf{k} \times \mathbf{v}) \sin \theta + \mathbf{k} (\mathbf{k} \cdot \mathbf{v}) (1 - \cos \theta)
+$$
+
+Substitute values $\(\cos 90^\circ = 0\)$, $\(\sin 90^\circ = 1\)$:
+
+$$
+\mathbf{v'} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \cdot 0 + \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \cdot 1 + \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \cdot 0 \cdot (1 - 0)
+$$
+
+Simplify:
+
+$$
+\mathbf{v'} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
+$$
+
+###### **Result**
+The vector $\(\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}\)$ rotated **90° around the z-axis** becomes $\(\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}\)$ (y-axis).
+
+
 
 ### 3. Scaling by $\((s_x, s_y, s_z)\)$  
 
