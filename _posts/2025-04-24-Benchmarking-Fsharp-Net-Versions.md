@@ -31,17 +31,11 @@ let main argv =
     0
 ```
 
-#### Results in Net8
+Generell Setup remarks: 
+
 ```
 BenchmarkDotNet v0.14.0, Windows 10 (22H2/2022Update)
 Intel Core i7-10850H CPU 2.70GHz, 1 CPU, 12 logical and 6 physical cores
-.NET SDK 8.0.100
-  [Host]     : .NET 8.0.0 (8.0.23.53103), X64 RyuJIT AVX2 DEBUG
-  DefaultJob : .NET 8.0.0 (8.0.23.53103), X64 RyuJIT AVX2
-
-// * Hints *
-Outliers
-FibonacciBenchmark.NaiveFibonacci: Default -> 3 outliers were removed (178.55 ns..184.25 ns)
 
 // * Legends *
 N      : Value of the 'N' parameter
@@ -51,94 +45,59 @@ StdDev : Standard deviation of all measurements
 1 ns   : 1 Nanosecond (0.000000001 sec)
 ```
 
-| Method         | N  | Mean           | Error        | StdDev       |
-|--------------- |--- |---------------:|-------------:|-------------:|
-| NaiveFibonacci | 10 |       166.6 ns |      2.95 ns |      2.62 ns |
-| NaiveFibonacci | 20 |    20,289.3 ns |    196.96 ns |    184.24 ns |
-| NaiveFibonacci | 30 | 2,497,391.2 ns | 33,438.25 ns | 31,278.16 ns |
+All tests regarding the NetVersions are done with FSharp.Core (8.0.100)
 
-
-#### Results in Net7
+#### Results of different Net versions
 
 ```
-BenchmarkDotNet v0.14.0, Windows 10 (22H2/2022Update)
-Intel Core i7-10850H CPU 2.70GHz, 1 CPU, 12 logical and 6 physical cores
 .NET SDK 8.0.100
+  [Host]     : .NET 8.0.0 (8.0.23.53103), X64 RyuJIT AVX2 DEBUG
+  DefaultJob : .NET 8.0.0 (8.0.23.53103), X64 RyuJIT AVX2
+
   [Host]     : .NET 7.0.14 (7.0.1423.51910), X64 RyuJIT AVX2 DEBUG
   DefaultJob : .NET 7.0.14 (7.0.1423.51910), X64 RyuJIT AVX2
 
-// * Hints *
-Outliers
-  FibonacciBenchmark.NaiveFibonacci: Default -> 1 outlier  was  removed, 3 outliers were detected (28.88 us, 28.91 us, 30.03 us)
-  FibonacciBenchmark.NaiveFibonacci: Default -> 1 outlier  was  removed (4.04 ms)
-
-// * Legends *
-  N      : Value of the 'N' parameter
-  Mean   : Arithmetic mean of all measurements
-  Error  : Half of 99.9% confidence interval
-  StdDev : Standard deviation of all measurements
-  1 ns   : 1 Nanosecond (0.000000001 sec)
-```
-
-| Method         | N  | Mean           | Error        | StdDev        |
-|--------------- |--- |---------------:|-------------:|--------------:|
-| NaiveFibonacci | 10 |       234.9 ns |      4.10 ns |       3.84 ns |
-| NaiveFibonacci | 20 |    29,275.7 ns |    215.79 ns |     191.29 ns |
-| NaiveFibonacci | 30 | 3,610,084.6 ns | 71,173.70 ns | 112,889.05 ns |
-
-
-
-#### Results in Net6
-```
-BenchmarkDotNet v0.14.0, Windows 10 (22H2/2022Update)
-Intel Core i7-10850H CPU 2.70GHz, 1 CPU, 12 logical and 6 physical cores
-.NET SDK 8.0.100
   [Host]     : .NET 6.0.25 (6.0.2523.51912), X64 RyuJIT AVX2 DEBUG
   DefaultJob : .NET 6.0.25 (6.0.2523.51912), X64 RyuJIT AVX2
 
-// * Hints *
-Outliers
-  FibonacciBenchmark.NaiveFibonacci: Default -> 2 outliers were removed (32.85 us, 33.08 us)
-  FibonacciBenchmark.NaiveFibonacci: Default -> 2 outliers were removed (3.96 ms, 3.99 ms)
-
-// * Legends *
-  N      : Value of the 'N' parameter
-  Mean   : Arithmetic mean of all measurements
-  Error  : Half of 99.9% confidence interval
-  StdDev : Standard deviation of all measurements
-  1 ns   : 1 Nanosecond (0.000000001 sec)
-```
-
-| Method         | N  | Mean           | Error        | StdDev       |
-|--------------- |--- |---------------:|-------------:|-------------:|
-| NaiveFibonacci | 10 |       262.9 ns |      4.51 ns |      4.22 ns |
-| NaiveFibonacci | 20 |    32,163.7 ns |    253.10 ns |    211.35 ns |
-| NaiveFibonacci | 30 | 3,846,234.8 ns | 23,758.98 ns | 19,839.83 ns |
-
-
-
-#### Results in NetFramework48
-
-```
-BenchmarkDotNet v0.14.0, Windows 10 (22H2/2022Update)
-Intel Core i7-10850H CPU 2.70GHz, 1 CPU, 12 logical and 6 physical cores
   [Host]     : .NET Framework 4.8 (4.8.4772.0), X64 LegacyJIT VectorSize=256 DEBUG
   DefaultJob : .NET Framework 4.8 (4.8.4772.0), X64 RyuJIT VectorSize=256
+```
 
-// * Hints *
-Outliers
-  FibonacciBenchmark.NaiveFibonacci: Default -> 7 outliers were removed (36.27 us..140.75 us)
-  FibonacciBenchmark.NaiveFibonacci: Default -> 2 outliers were removed (4.23 ms, 4.29 ms)
+| Method                            | N  | Mean           | Error        | StdDev       |
+|---------------------------------- |--- |---------------:|-------------:|-------------:|
+| NaiveFibonacci .NET 8.0.0         | 30 | 2,497,391.2 ns | 33,438.25 ns | 31,278.16 ns |
+| NaiveFibonacci .NET 7.0.14        | 30 | 3,610,084.6 ns | 71,173.70 ns | 112,889.05 ns|
+| NaiveFibonacci .NET 6.0.25        | 30 | 3,846,234.8 ns | 23,758.98 ns | 19,839.83 ns |
+| NaiveFibonacci .NET Framework 4.8 | 30 | 3,959,601.8 ns | 74,595.78 ns | 104,572.87 ns|
+
+### Comparison between FSharpCore Versions
+
+```
+BenchmarkDotNet v0.14.0, Windows 10 (10.0.19045.5608/22H2/2022Update)
+Intel Core i7-10850H CPU 2.70GHz, 1 CPU, 12 logical and 6 physical cores
+.NET SDK 8.0.100
+  [Host]     : .NET 8.0.0 (8.0.23.53103), X64 RyuJIT AVX2 DEBUG
+  DefaultJob : .NET 8.0.0 (8.0.23.53103), X64 RyuJIT AVX2
 
 // * Legends *
   N      : Value of the 'N' parameter
   Mean   : Arithmetic mean of all measurements
   Error  : Half of 99.9% confidence interval
   StdDev : Standard deviation of all measurements
-  1 ns   : 1 Nanosecond (0.000000001 sec)
+  1 ms   : 1 Millisecond (0.001 sec)
 ```
-| Method         | N  | Mean           | Error        | StdDev        |
-|--------------- |--- |---------------:|-------------:|--------------:|
-| NaiveFibonacci | 10 |       260.0 ns |      5.00 ns |       4.68 ns |
-| NaiveFibonacci | 20 |    32,212.2 ns |    573.15 ns |     957.60 ns |
-| NaiveFibonacci | 30 | 3,959,601.8 ns | 74,595.78 ns | 104,572.87 ns |
+| Method                               | N  | Mean     | Error     | StdDev    |
+|------------------------------------- |--- |---------:|----------:|----------:|
+| NaiveFibonacci Fsharp.Core (6.0.0)   | 30 | 3.080 ms | 0.0599 ms | 0.0500 ms |
+| NaiveFibonacci Fsharp.Core (7.0.0)   | 30 | 3.393 ms | 0.0804 ms | 0.2319 ms |
+| NaiveFibonacci Fsharp.Core (8.0.100) | 30 | 3.205 ms | 0.0640 ms | 0.1278 ms |
+| NaiveFibonacci Fsharp.Core (9.0.202) | 30 | 3.113 ms | 0.0587 ms | 0.0521 ms |
+
+
+| Method                               | Mean     | Error   | StdDev  |
+|------------------------------------- |---------:|--------:|--------:|
+| MandelbrotTest Fsharp.Core (6.0.0)   | 345.2 us | 4.45 us | 3.94 us |
+| MandelbrotTest Fsharp.Core (7.0.0)   | 282.0 us | 2.28 us | 2.13 us |
+| MandelbrotTest Fsharp.Core (8.0.100) | 278.2 us | 4.43 us | 4.14 us |
+| MandelbrotTest Fsharp.Core (9.0.202) | 273.0 us | 3.66 us | 3.06 us |
