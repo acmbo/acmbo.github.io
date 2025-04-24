@@ -15,7 +15,7 @@ open BenchmarkDotNet.Running
 
 type FibonacciBenchmark() =
 
-    [<Params(10, 20, 30)>]
+    [<Params(30)>]
     member val N = 0 with get, set
 
     [<Benchmark>]
